@@ -17,14 +17,14 @@ polkadot-primitives = { path = "../primitives" }
 polkadot-runtime = { path = "../runtime" }
 polkadot-executor = { path = "../executor" }
 polkadot-network = { path = "../network"  }
-sr-io = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
-sr-primitives = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
-substrate-primitives = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
-substrate-client = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
-substrate-consensus-aura = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
-substrate-finality-grandpa = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
-substrate-inherents = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
-substrate-service = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
-substrate-telemetry = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
-substrate-transaction-pool = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
-substrate-keystore = { git = "https://github.com/paritytech/substrate", branch = "polkadot-master" }
+sr-io = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
+sr-primitives = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
+substrate-primitives = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
+substrate-client = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
+substrate-consensus-aura = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
+substrate-finality-grandpa = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
+substrate-inherents = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
+substrate-service = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
+substrate-telemetry = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
+substrate-transaction-pool = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
+substrate-keystore = { git = "https://github.com/paritytech/substrate", branch = "bkchr-cumulus-branch" }
