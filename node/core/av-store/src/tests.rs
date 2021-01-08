@@ -667,6 +667,29 @@ fn stored_chunk_kept_until_finalized() {
 }
 
 #[test]
+fn test_bench() {
+	use parity_scale_codec::{Encode, Decode};
+	let pruning = vec![ChunkPruningRecord::default(); 200_000];
+	let now = std::time::Instant::now();
+
+	let encoded = pruning.encode();
+
+    let elapsed = now.elapsed();
+    println!("Elapsed: {:?}", elapsed);
+
+	let now = std::time::Instant::now();
+	let decoded = Vec::<ChunkPruningRecord>::decode(&mut &encoded[..]).unwrap();
+
+    let elapsed = now.elapsed();
+    println!("Elapsed: {:?}", elapsed);
+
+	// do not optimize away my unused data.
+	for i in 0..decoded.len() {
+		assert_eq!(pruning[i].chunk_index, decoded[i].chunk_index);
+	}
+}
+
+#[test]
 fn forkfullness_works() {
 	let store = Arc::new(kvdb_memorydb::create(columns::NUM_COLUMNS));
 	let test_state = TestState::default();

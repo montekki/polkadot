@@ -103,6 +103,12 @@ enum PruningDelay {
 	Indefinite,
 }
 
+impl Default for PruningDelay {
+    fn default() -> Self {
+		Self::Indefinite
+    }
+}
+
 impl PruningDelay {
 	fn now() -> Result<Self, Error> {
 		Ok(SystemTime::now().duration_since(UNIX_EPOCH)?.into())
@@ -242,11 +248,17 @@ impl Default for PruningConfig {
 	}
 }
 
-#[derive(Debug, Decode, Encode, Eq, PartialEq)]
+#[derive(Clone, Debug, Decode, Encode, Eq, PartialEq)]
 enum CandidateState {
 	Stored,
 	Included,
 	Finalized,
+}
+
+impl Default for CandidateState {
+    fn default() -> Self {
+		Self::Stored
+    }
 }
 
 #[derive(Debug, Decode, Encode, Eq)]
@@ -279,7 +291,7 @@ impl PartialOrd for PoVPruningRecord {
 	}
 }
 
-#[derive(Debug, Decode, Encode, Eq)]
+#[derive(Clone, Default, Debug, Decode, Encode, Eq)]
 struct ChunkPruningRecord {
 	candidate_hash: CandidateHash,
 	block_number: BlockNumber,
