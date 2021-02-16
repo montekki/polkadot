@@ -72,11 +72,11 @@ pub type RococoChainSpec = service::GenericChainSpec<RococoGenesisExt, Extension
 #[derive(serde::Serialize, serde::Deserialize)]
 pub struct RococoGenesisExt {
 	/// The runtime genesis config.
-	runtime_genesis_config: rococo::GenesisConfig,
+	pub runtime_genesis_config: rococo::GenesisConfig,
 	/// The session length in blocks.
 	///
 	/// If `None` is supplied, the default value is used.
-	session_length_in_blocks: Option<u32>,
+	pub session_length_in_blocks: Option<u32>,
 }
 
 impl sp_runtime::BuildStorage for RococoGenesisExt {
